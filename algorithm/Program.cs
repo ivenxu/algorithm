@@ -9,7 +9,9 @@ namespace algorithm
     {
         static void Main(string[] args)
         {
-            LinkedListTest();
+            EightQueens.BackTrack();
+            //LinkedListTest();
+
         }
 
         static void LinkedListTest()
