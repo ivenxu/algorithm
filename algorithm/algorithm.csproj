@@ -75,6 +75,7 @@
     <Compile Include="BidimensionalArrayBinarySearch.cs" />
     <Compile Include="BidimensionalArrayBinarySearchTest.cs" />
     <Compile Include="BinarySearchTest.cs" />
+    <Compile Include="EightQueens.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="LinkedListTest.cs" />
     <Compile Include="Miscellaneous.cs" />
