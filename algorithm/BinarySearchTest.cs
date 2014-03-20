@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace algorithm
-{
+namespace algorithm {
     [TestClass]
-    public class BinarySearchTest
-    {
+    public class BinarySearchTest {
         [TestMethod]
-        public void Search_One_Item()
-        {
-            int[] src = new int[]{1};
+        public void Search_One_Item() {
+            int[] src = new int[] { 1 };
 
             Assert.AreEqual(BinarySearcher.Search(src, 1), 0);
 
@@ -20,8 +17,7 @@ namespace algorithm
         }
 
         [TestMethod]
-        public void Search_One_Item_No_Match()
-        {
+        public void Search_One_Item_No_Match() {
             int[] src = new int[] { 1 };
 
             Assert.AreEqual(BinarySearcher.Search(src, 2), -1);
@@ -30,17 +26,15 @@ namespace algorithm
         }
 
         [TestMethod]
-        public void Search_Two_Items()
-        {
-            int[] src = new int[]{1, 2};
+        public void Search_Two_Items() {
+            int[] src = new int[] { 1, 2 };
 
             Assert.AreEqual(BinarySearcher.Search(src, 2), 1);
             Assert.AreEqual(BinarySearcher.RecurseSearch(src, 2), 1);
         }
 
         [TestMethod]
-        public void Search_Two_Items_No_Match()
-        {
+        public void Search_Two_Items_No_Match() {
             int[] src = new int[] { 1, 2 };
 
             Assert.AreEqual(BinarySearcher.Search(src, 3), -1);
@@ -48,18 +42,16 @@ namespace algorithm
         }
 
         [TestMethod]
-        public void Search_Three_Items()
-        {
-            int[] src = new int[] { 1, 2,3 };
+        public void Search_Three_Items() {
+            int[] src = new int[] { 1, 2, 3 };
 
             Assert.AreEqual(BinarySearcher.Search(src, 2), 1);
             Assert.AreEqual(BinarySearcher.RecurseSearch(src, 2), 1);
         }
 
         [TestMethod]
-        public void Search_Three_Items_No_Match()
-        {
-            int[] src = new int[] { 1, 2,3 };
+        public void Search_Three_Items_No_Match() {
+            int[] src = new int[] { 1, 2, 3 };
 
             Assert.AreEqual(BinarySearcher.Search(src, 0), -1);
             Assert.AreEqual(BinarySearcher.RecurseSearch(src, 0), -1);

@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace algorithm
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace algorithm {
+    class Program {
+        static void Main(string[] args) {
             EightQueens.BackTrack();
             //LinkedListTest();
 
         }
 
-        static void LinkedListTest()
-        {
+        static void LinkedListTest() {
             LinkedList<int> ll = new LinkedList<int>();
             ll.InsertAtFront(new LinkNode<int>(1));
             ll.InsertAtFront(new LinkNode<int>(2));
@@ -23,8 +19,7 @@ namespace algorithm
 
             Console.WriteLine(ll.ToString());
 
-            foreach (int item in ll)
-            {
+            foreach (int item in ll) {
                 Console.WriteLine(item);
             }
         }

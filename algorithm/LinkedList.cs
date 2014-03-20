@@ -3,64 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace algorithm
-{
-    public class LinkedList<T> : IEnumerable<T>, IEnumerator<T>
-    {
+namespace algorithm {
+    public class LinkedList<T> : IEnumerable<T>, IEnumerator<T> {
         private LinkNode<T> _first;
         private LinkNode<T> _last;
 
         private LinkNode<T> _current;
 
-        public LinkedList()
-        {
+        public LinkedList() {
             _first = _last = null;
         }
 
-        public bool IsEmpty()
-        {
+        public bool IsEmpty() {
             return _first == null;
         }
 
-        public void InsertAtFront(LinkNode<T> node)
-        {
-            if (this.IsEmpty())
-            {
+        public void InsertAtFront(LinkNode<T> node) {
+            if (this.IsEmpty()) {
                 _last = _first = node;
-            }
-            else
-            {
+            } else {
                 node.Next = _first;
                 _first = node;
             }
         }
 
-        public void RemoveAtFront()
-        {
-            if (!this.IsEmpty())
-            {
+        public void RemoveAtFront() {
+            if (!this.IsEmpty()) {
                 _first = _first.Next;
             }
         }
 
-        public void InsertAtEnd(LinkNode<T> node)
-        {
-            if (this.IsEmpty())
-            {
+        public void InsertAtEnd(LinkNode<T> node) {
+            if (this.IsEmpty()) {
                 _last = _first = node;
-            }
-            else
-            {
+            } else {
                 _last.Next = node;
                 _last = node;
             }
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             StringBuilder sb = new StringBuilder();
-            for (LinkNode<T> cur = _first; cur != null; cur = cur.Next)
-            {
+            for (LinkNode<T> cur = _first; cur != null; cur = cur.Next) {
                 sb.AppendLine(cur.Data.ToString());
             }
 
@@ -68,23 +52,18 @@ namespace algorithm
         }
 
 
-        private T GetDataFronCurrent()
-        {
+        private T GetDataFronCurrent() {
             _current = _current ?? _first;
-            if (_current == null)
-            {
+            if (_current == null) {
                 return default(T);
-            }
-            else
-            {
+            } else {
                 return _current.Data;
             }
         }
 
         #region IEnumerable<T> 成员
 
-        public IEnumerator<T> GetEnumerator()
-        {
+        public IEnumerator<T> GetEnumerator() {
             return this as IEnumerator<T>;
         }
 
@@ -92,8 +71,7 @@ namespace algorithm
 
         #region IEnumerable 成员
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
             return this as System.Collections.IEnumerator;
         }
 
@@ -101,10 +79,8 @@ namespace algorithm
 
         #region IEnumerator<T> 成员
 
-        public T Current
-        {
-            get 
-            {
+        public T Current {
+            get {
                 return GetDataFronCurrent();
             }
         }
@@ -113,8 +89,7 @@ namespace algorithm
 
         #region IDisposable 成员
 
-        public void Dispose()
-        {
+        public void Dispose() {
             _first = _last = _current = null;
         }
 
@@ -122,42 +97,33 @@ namespace algorithm
 
         #region IEnumerator 成员
 
-        object System.Collections.IEnumerator.Current
-        {
+        object System.Collections.IEnumerator.Current {
             get { return GetDataFronCurrent(); }
         }
 
-        public bool MoveNext()
-        {
+        public bool MoveNext() {
             if (this.IsEmpty()) return false;
-            if (_current == null)
-            {
+            if (_current == null) {
                 _current = _first;
-            }
-            else
-            {
+            } else {
                 _current = _current.Next;
             }
 
             return _current != null;
         }
 
-        public void Reset()
-        {
+        public void Reset() {
             _current = null;
         }
 
         #endregion
     }
 
-    public class LinkNode<T>
-    {
+    public class LinkNode<T> {
         public LinkNode(T data)
-            : this(data, null)
-        { }
+            : this(data, null) { }
 
-        public LinkNode(T data, LinkNode<T> next)
-        {
+        public LinkNode(T data, LinkNode<T> next) {
             this.Data = data;
             this.Next = next;
         }

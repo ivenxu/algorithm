@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace algorithm
-{
+namespace algorithm {
     [TestClass]
-    public class LinkedListTest
-    {
+    public class LinkedListTest {
         [TestMethod]
-        public void LinkedListSimpleTest()
-        {
+        public void LinkedListSimpleTest() {
             LinkedList<int> ll = new LinkedList<int>();
             ll.InsertAtFront(new LinkNode<int>(1));
             ll.InsertAtFront(new LinkNode<int>(2));
@@ -19,8 +16,7 @@ namespace algorithm
 
             Console.WriteLine(ll.ToString());
 
-            foreach (int item in ll)
-            {
+            foreach (int item in ll) {
                 Console.WriteLine(item);
             }
         }
