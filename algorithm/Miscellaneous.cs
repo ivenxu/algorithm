@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,12 @@ namespace algorithm {
                 prev = tmpRet;
             }
 
+            return ret;
+        }
+
+        public static byte[] BitArrayToByteArray(BitArray bits) {
+            byte[] ret = new byte[bits.Length / 8];
+            bits.CopyTo(ret, 0);
             return ret;
         }
 

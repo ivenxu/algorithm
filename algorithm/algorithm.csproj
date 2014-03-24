@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="BidimensionalArrayBinarySearch.cs" />
     <Compile Include="BidimensionalArrayBinarySearchTest.cs" />
+    <Compile Include="BigNumber.cs" />
     <Compile Include="BinarySearchTest.cs" />
     <Compile Include="EightQueens.cs" />
     <Compile Include="LinkedList.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections;
 
 namespace algorithm {
     [TestClass]
@@ -57,6 +58,16 @@ namespace algorithm {
             Assert.AreEqual(720, Miscellaneous.FactorialRecurse(6));
             Assert.AreEqual(720, Miscellaneous.FactorialIteration(6));
             Assert.AreEqual(720, Miscellaneous.FactorialStack(6));
+        }
+
+        [TestMethod]
+        public void BitArrayToBytes() {
+            var text = "Test";
+            var bytes = System.Text.Encoding.ASCII.GetBytes(text);
+            var bits = new BitArray(bytes);
+            var bytesBack = Miscellaneous.BitArrayToByteArray(bits);
+            var textBack = System.Text.Encoding.ASCII.GetString(bytesBack);
+            Assert.AreEqual(text, textBack);
         }
     }
 }
